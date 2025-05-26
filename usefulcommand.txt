@@ -1,0 +1,52 @@
+#connect with remote server
+ssh -i new_key_pair.pem      ubuntu@ec2-3-25-42-121.ap-southeast-2.compute.amazonaws.com
+
+
+#Install apache and check basic webserver , follow the codes
+
+
+sudo apt update
+sudo apt install apache2
+sudo nano /var/www/html/index.html
+
+
+
+#copy the portfolio files to server
+
+scp -i  /path/to/key.pem  /path_to_the_folder/*  ubuntu@3.25.42.121:/var/www/html/
+
+
+
+
+# how to upload files on github
+
+
+git init
+git add . # for adding all the files
+git commit -m " a suitable message"
+git branch -M main
+git remote add origin git@github.com:[repo address]
+git push -origin main
+
+
+
+#for further updates
+
+git add [filename]
+git commit -m "msg"
+git push
+
+
+
+#Some linux basic commands
+
+ls -l #list files in the current directory
+cd /path/to/directory #change directory
+pwd #print working directory
+rm -rf [filename] #remove file or directory
+cp [source] [destination] #copy file
+mkdir [directory_name] #create a new directory
+chmod +x [filename] #change file permissions to executable
+#nano [filename] #open file in nano editor
+#cat [filename] #display file content
+#exit the ssh session
